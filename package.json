@@ -1,0 +1,22 @@
+{
+  "name": "secret-backend",
+  "version": "1.0.0",
+  "description": "Backend for Secret clone",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bpradana/secret-backend.git"
+  },
+  "author": "Bintang Pradana Erlangga Putra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bpradana/secret-backend/issues"
+  },
+  "homepage": "https://github.com/bpradana/secret-backend#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
