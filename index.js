@@ -1,6 +1,9 @@
 const app = require('express')();
+const mongoose = require('mongoose');
 const PORT = 3000;
+require('dotenv/config');
 
+// Home Page
 app.get('/', (req, res) => {
     res.send('Hi!');
 });
@@ -9,4 +12,10 @@ app.get('/', (req, res) => {
 const postsRoute = require('./routes/posts');
 app.use('/posts', postsRoute);
 
-app.listen(PORT, () => console.log(`app running on port ${PORT}`));
+// Connect to DB
+mongoose.connect(process.env.DB_CONNECT, { useNewUrlParser: true, useUnifiedTopology: true }, () => {
+    console.log('Connected to DB!')
+})
+
+// Listening
+app.listen(PORT, () => console.log(`App running on port ${PORT}`));
