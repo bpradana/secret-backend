@@ -4,6 +4,7 @@
   "description": "Backend for Secret clone",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "nodemon index.js"
   },
   "repository": {
