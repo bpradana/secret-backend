@@ -8,7 +8,12 @@ const PostSchema = mongoose.Schema({
     date: {
         type: Date,
         default: Date.now
-    }
+    },
+    votes: {
+        type: Number,
+        default: 0
+    },
+    comments: [{ content: String, date: Date }]
 });
 
 module.exports = mongoose.model('Posts', PostSchema);

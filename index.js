@@ -1,7 +1,10 @@
 const app = require('express')();
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 const PORT = 3000;
 require('dotenv/config');
+
+app.use(bodyParser.json());
 
 // Home Page
 app.get('/', (req, res) => {
