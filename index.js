@@ -15,6 +15,12 @@ app.get('/', (req, res) => {
 
 // Import Routes
 const postsRoute = require('./routes/posts');
+app.options('/posts', function (req, res) {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader('Access-Control-Allow-Methods', '*');
+    res.setHeader("Access-Control-Allow-Headers", "*");
+    res.end();
+  });
 app.use('/posts', postsRoute);
 
 // Connect to DB
