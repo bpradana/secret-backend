@@ -6,7 +6,7 @@ const moment = require('moment');
 router.get('/', async (req, res) => {
     try {
         const posts = await Post.find().sort({date: -1});
-        res.send(posts);
+        res.status(200).send(posts);
     } catch(error) {
         res.send({ message: error });
     }
