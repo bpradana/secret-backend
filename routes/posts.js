@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Post = require('../models/Post');
 const moment = require('moment');
+const { uniqueNamesGenerator, adjectives, colors, animals } = require('unique-names-generator');
 
 router.get('/', async (req, res) => {
     try {
@@ -14,7 +15,12 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
     const post = new Post({
-        content: req.body.content
+        content: req.body.content,
+        name: uniqueNamesGenerator({
+            dictionaries: [adjectives, animals],
+            separator: ' ',
+            style: 'capital'
+        })
     });
 
     try {
